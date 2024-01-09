@@ -1,0 +1,63 @@
+$bgcolor: lightblue , black;
+$textcolor: darkblue;
+$fontsize: 18px;
+
+// @import "reset";
+
+
+body {
+    background-color: nth($bgcolor, 1 );
+//   background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+} 
+
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }  
+
+  @mixin important-text {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid blue;
+  }
+  
+  .danger {
+    @include important-text;
+    background-color: green;
+  } 
+
+
+  .button-basic  {
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px
+  }
+  
+  .button-report  {
+    @extend .button-basic;
+    background-color: red;
+  }
+  
+  .button-submit  {
+    @extend .button-basic;
+    background-color: green;
+    color: white;
+  }
+
